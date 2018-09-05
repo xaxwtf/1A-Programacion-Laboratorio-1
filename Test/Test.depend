@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1536159908 source:d:\sariel\test\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
