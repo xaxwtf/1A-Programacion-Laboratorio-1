@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define TAM 5
 /** \brief Solicita un Numero Entero, lo verifica y guarda
  *
  * \param es La direcion de Memoria Donde se guardara el dato
@@ -15,32 +16,19 @@
 int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
 int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
 int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup);
-
+void ord_char (char array[],int tam);
 int main()
 {
-    char letra={'A'};
-    char letra2;
-    int resl;
-    /*resl=getChar(&letra,"Indique una Letra de A - C","Error, el Caracter Indicado no es Valido",'A','C');
-    if(resl!=-1)
+    char letra[TAM];
+    int i;
+    for(i=0;i<TAM;i++)
     {
-        printf("\n EL caracter Indicado es %c",letra);
+        getChar(&letra[i],"indique una Letra","El Caracter Esta Fuera de rango",'a','z');
     }
-    else
+    for(i=0;i<TAM;i++)
     {
-        printf("\n No se Logro cargar el Caracter");
-    }*/
-    fflush(stdin);
-    scanf("%c",&letra2);
-    if(strcmp(letra2,letra)==0)
-    {
-        printf("Letra Correcta es %c",letra2);
+        printf("%c   ",letra[i]);
     }
-    else{
-        printf("Error;");
-    }
-
-
 
     return 0;
 }
@@ -85,7 +73,7 @@ int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup)
     scanf("%c",&c);
     if(c>=linf&&c<=lsup)
     {
-        strcpy(*dir,c);
+        *dir=c;
     }
     else
     {
@@ -94,4 +82,21 @@ int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup)
     }
     return i;
 }
+void ord_char (char array[],int tam)
+{
+    int i,j;
+    char aux;
+    for(i=0;i<tam;i++)
+    {
+        for(j=i+1;j<tam;i++)
+        {
+            if(array[i]>array[j])
+            {
+                aux=array[i];
+                array[i]=array[j];
+                array[j]=aux;
+            }
+        }
+    }
 
+}
