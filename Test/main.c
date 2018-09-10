@@ -17,18 +17,11 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
 int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
 int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup);
 void ord_char (char array[],int tam);
+int mi_strig_cpy(char destino[],char origen[]);
 int main()
 {
-    char letra[TAM];
-    int i;
-    for(i=0;i<TAM;i++)
-    {
-        getChar(&letra[i],"indique una Letra","El Caracter Esta Fuera de rango",'a','z');
-    }
-    for(i=0;i<TAM;i++)
-    {
-        printf("%c   ",letra[i]);
-    }
+    char palabra[TAM]={"hola"};
+    char palabra2[TAM];
 
     return 0;
 }
@@ -99,4 +92,22 @@ void ord_char (char array[],int tam)
         }
     }
 
+}
+int mi_strig_cpy(char destino[],char origen[])
+{
+    int i;
+    int flag=1;
+    while(flag==1)
+    {
+        if(origen[i]!='\0')
+        {
+            destino[i]=origen[i];
+            i++;
+        }
+        else
+        {
+            flag=0;
+        }
+
+    }
 }
