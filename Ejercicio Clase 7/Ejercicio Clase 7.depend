@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1536762386 source:d:\sariel\ejercicio clase 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+
+1536760371 d:\sariel\ejercicio clase 7\s_ariel.h
+
+1536761922 source:d:\sariel\ejercicio clase 7\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+

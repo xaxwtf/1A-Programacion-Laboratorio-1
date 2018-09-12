@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TAM 5
+#define TAM 50
 /** \brief Solicita un Numero Entero, lo verifica y guarda
  *
  * \param es La direcion de Memoria Donde se guardara el dato
@@ -17,11 +17,19 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
 int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
 int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup);
 void ord_char (char array[],int tam);
-int mi_strig_cpy(char destino[],char origen[]);
+int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
+
 int main()
 {
-    char palabra[TAM]={"hola"};
+    char palabra[TAM];
     char palabra2[TAM];
+    int rels;
+    rels=getString(palabra2,"Indique un Nombre de 3 caracteres","el Nombre exede el Numero de caracteres permitidos",0,3);
+    if(rels==0)
+    {
+        printf("\n el Nombre es %s",palabra2);
+    }
+
 
     return 0;
 }
@@ -111,3 +119,23 @@ int mi_strig_cpy(char destino[],char origen[])
 
     }
 }
+int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup)
+{
+    char aux[300];
+    int rels;
+    int i=-1;
+    printf(mensaje);
+    gets(aux);
+    rels=strlen(aux);
+    if(rels>=Linf&&rels<=Lsup)
+    {
+        strcpy(input,aux);
+        i=0;
+    }
+    else
+    {
+        printf(Emensaje);
+    }
+    return i;
+}
+
