@@ -72,15 +72,16 @@ int main()
 
                 break;
             case 3:
-                aux=getInt(&valor,"\n-MODIFICAR \n indique el Numero de legajo: \n","el Legajo Indicano No es Valido",1,TAM);
+                aux=getInt(&valor,"\n-MODIFICAR \n indique el Numero de legajo: \n","el Legajo Indicano No es Valido\n ",1,TAM);
                 rels=busPrimeraOcurrencia(legajo,TAM,valor);
                 if(rels!=-1)
                 {
                     do{
+                        printf("Datos Obetenidos del legajo Nro:%d \n Nombre: %s\n Apellido: %s \n Edad: %d",legajo[rels],nombres[rels],apellido[rels],edad[rels]);
                         aux=getInt(&valor,"\n -MODIFICAR- \n 1-Nombre \n 2-apellido \n 3-Edad \n 0-salir"," ",0,3);
                         switch(valor)
                         {
-                            case 1:
+                            case 1:getString(&nombres[rels],"Indique un Nombre","Error, el Nombre debe tener al menos 2 caracteres",2,29);
                                 break;
                             case 2:
                                 break;
@@ -88,7 +89,7 @@ int main()
                                 break;
                         }
 
-                    }while()
+                    }while(valor!=0);
                 }
                 break;
         }

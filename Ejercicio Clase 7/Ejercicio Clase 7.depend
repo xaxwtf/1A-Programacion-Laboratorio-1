@@ -11,3 +11,16 @@
 	<stdlib.h>
 	"S_Ariel.h"
 
+1537142971 source:h:\1a\1a-programacion-laboratorio-1\ejercicio clase 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1537142971 h:\1a\1a-programacion-laboratorio-1\ejercicio clase 7\s_ariel.h
+
+1537142971 source:h:\1a\1a-programacion-laboratorio-1\ejercicio clase 7\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+
