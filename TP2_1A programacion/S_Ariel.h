@@ -1,13 +1,21 @@
+#ifndef S_Ariel_H_INCLUDED
+#define S_Ariel_H_INCLUDED
+typedef struct{
+    int id;
+    char name[51];
+    char lastName[51];
+    float salary;
+    int sector;
+    int isEmpy;
+}eEmployee;
 /** \brief inicializa un array en el valor que indique el programador
  *
- * \param vector: es el array al cual se le asiganara el dato
- * \param tam es el tamaño del array al cual se le asignara el dato
- * \param es el dato que se le asiganara a cada pocicion del array
- * \param desde el Indice a partir del cual le Asignara el valor indicado
+ * \param es la direcion donde se encuentra el array de estructuras
+ * \param es el tamaño del array
  * \return
  *
  */
-void inizArray(eEmpleado vector[],int tam,int valor,int desde);
+void initEmployees(eEmployee *lista,int len);
 
 /** \brief Solicita un Numero Entero, lo verifica y guarda
  *
@@ -29,6 +37,7 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
  * \return devuelve -1 si no se encuentra el dato o devuelve el indice en el cual se encontro el dato indicado
  *
  */
-int busPrimeraOcurrencia(int vector[],int tam, int valor);
+//int busPrimeraOcurrencia(eEmployee vector[],int tam, int valor);
 int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
 int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
+#endif // S_Ariel_H_INCLUDED

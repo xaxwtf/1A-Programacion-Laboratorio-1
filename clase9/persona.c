@@ -1,40 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#define TAM 50
-/** \brief Solicita un Numero Entero, lo verifica y guarda
- *
- * \param es La direcion de Memoria Donde se guardara el dato
- * \param es el Mensaje Mostrado al Solicitar el dato
- * \param es el Mensaje mostrado en caso que indique un dato Incorrecto
- * \param es el limite Inferior para verificar el dato
- * \param es el limite superior para verificar el dato
- * \return 1 si se logro cargar el dato -1 si no
- *
- */
-
-int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
-int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
-int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup);
-void ord_char (char array[],int tam);
-int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
-void string_save(char *date);
-
-int main()
-{
-    char palabra[TAM];
-    char palabra2[TAM];
-    int rels;
-    rels=getString(palabra2,"Indique un Nombre de 3 caracteres","el Nombre exede el Numero de caracteres permitidos",5,100);
-    if(rels==0)
-    {
-        string_save(palabra2);
-        printf("\n el Nombre es %s",palabra2);
-    }
-
-
-    return 0;
-}
+#include "persona.h"
 int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
 {
     int i=1;
@@ -103,24 +67,6 @@ void ord_char (char array[],int tam)
     }
 
 }
-int mi_strig_cpy(char destino[],char origen[])
-{
-    int i;
-    int flag=1;
-    while(flag==1)
-    {
-        if(origen[i]!='\0')
-        {
-            destino[i]=origen[i];
-            i++;
-        }
-        else
-        {
-            flag=0;
-        }
-
-    }
-}
 int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup)
 {
     char aux[300];
@@ -154,5 +100,47 @@ void string_save(char *date)
     }
     date[0]=toupper(date[0]);
 
+}
+
+void init(EPersona lista[], int len){
+    int i;
+    for(i=0; i<len; i++){
+        lista[i].isEmpty = 1;
+    }
+}
+
+int obtenerEspacioLibre(EPersona lista[], int len){
+    int i;
+    int retorno = -1;
+
+    for(i=0; i<len; i++){
+        if(lista[i].isEmpty == 1){
+            retorno = i;
+            break;
+        }
+    }
+    return retorno;
+}
+
+
+void alta(EPersona lista[], int len){
+    int index;
+    int aux;
+    EPersona eAux;
+    if(obtenerEspacioLibre(lista, len)==-1)
+    {
+        brea.
+    }
+
+
+    if(index != -1){
+        //hay espacio libre
+        aux=getInt(&)
+    }
+    else{
+        //no hay espacio libre
+    }
+
+    return;
 }
 

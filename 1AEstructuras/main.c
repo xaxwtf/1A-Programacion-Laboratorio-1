@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TAM 2
+#define TAM 5
 typedef struct{
     int dia;
     int mes;
@@ -21,12 +21,9 @@ void mostrar_empleados(eEmpleado lista[],int tam);
 int main()
 {
     int i;
-    //eFecha fecha_hoy={17,9,2018};
-    eEmpleado empleados[TAM]={
-     {1111,"alice",'f',15000,{17,9,2018}},
-     {2222,"kir",'f',16000,{17,9,2018}}
-    };
-   /* for(i=0;i<TAM;i++)
+    eFecha fecha_hoy={17,9,2018};
+    eEmpleado empleados[TAM];
+    for(i=0;i<TAM;i++)
     {
         printf("\n indique el nro de legajo: ");
         scanf("%d",&empleados[i].legajo);
@@ -40,7 +37,7 @@ int main()
         scanf("%f",&empleados[i].sueldo);
         empleados[i].fecha_ingreso=fecha_hoy;
 
-    }*/
+    }
     mostrar_empleados(empleados,TAM);
 
     return 0;
@@ -60,11 +57,23 @@ void mostrar_empleados(eEmpleado lista[],int tam)
 void ordenar_empleados(eEmpleado lista[],int tam)
 {
     int i,j;
+    eEmpleado auxEmpleado;
     for(i=0;i<tam;i++)
     {
         for(j=i+1;j<tam;j++)
         {
-            if()
+            if( lista[i].sexo > lista[j].sexo)
+            {
+                auxEmpleado = lista[i];
+                lista[i] = lista[j];
+                lista[j] = auxEmpleado;
+            }
+            else if( lista[i].sexo == lista[j].sexo && strcmp(lista[i].nombre, lista[j].nombre) > 0)
+            {
+                auxEmpleado = lista[i];
+                lista[i] = lista[j];
+                lista[j] = auxEmpleado;
+            }
         }
     }
 }

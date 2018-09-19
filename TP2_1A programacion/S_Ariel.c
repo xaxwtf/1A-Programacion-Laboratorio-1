@@ -1,9 +1,12 @@
-void inizArray(eEmpleado vector[],int tam,int valor,int desde)
+#include <stdio.h>
+#include <stdlib.h>
+#include "S_Ariel.h"
+void initEmployees(eEmployee *lista,int len)
 {
     int i;
-    for(i=desde; i<tam; i++)
+    for(i=0; i<len; i++)
     {
-        vector[i].legajo=valor;
+        lista[i].isEmpy=1;
     }
 }
 int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
@@ -22,19 +25,19 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
     }
     return i;
 }
-int busPrimeraOcurrencia(int vector[],int tam, int valor)
+/*int initEmployees(eEmployee lista[],int len)
 {
     int i;
     int index=-1;
     for(i=0;i<tam;i++)
     {
-        if(vector[i]==valor)
+        if(vector[i].isEmpy==1)
         {
            return i;
         }
     }
     return index;
-}
+}*/
 int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup)
 {
     char aux[300];
