@@ -9,6 +9,19 @@ void initEmployees(eEmployee *lista,int len)
         lista[i].isEmpy=1;
     }
 }
+int busPrimeraOcurrencia(eEmployee *lista,int tam, int valor)
+{
+    int i;
+    int index=-1;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].isEmpy==valor)
+        {
+           return i;
+        }
+    }
+    return index;
+}
 int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
 {
     int i=0;
@@ -25,19 +38,6 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
     }
     return i;
 }
-/*int initEmployees(eEmployee lista[],int len)
-{
-    int i;
-    int index=-1;
-    for(i=0;i<tam;i++)
-    {
-        if(vector[i].isEmpy==1)
-        {
-           return i;
-        }
-    }
-    return index;
-}*/
 int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup)
 {
     char aux[300];
@@ -73,4 +73,13 @@ int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup)
         printf(Emsg);
     }
     return i;
+}
+int addEmployee(eEmployee *lista, int len,int id, char name[],char lastName[], float salary, int sector)
+{
+    int index=-1;
+    eEmployee aux;
+    int dir;
+    dir=busPrimeraOcurrencia(lista,len,1);
+    aux.id=id;
+    return index;
 }

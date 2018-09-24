@@ -37,7 +37,8 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
  * \return devuelve -1 si no se encuentra el dato o devuelve el indice en el cual se encontro el dato indicado
  *
  */
-//int busPrimeraOcurrencia(eEmployee vector[],int tam, int valor);
+int busPrimeraOcurrencia(eEmployee *lista,int tam, int valor);
 int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
 int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
+int addEmployee(eEmployee *lista, int len,int id, char name[],char lastName[], float salary, int sector);
 #endif // S_Ariel_H_INCLUDED

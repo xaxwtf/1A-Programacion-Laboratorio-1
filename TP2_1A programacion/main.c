@@ -6,8 +6,8 @@
 int main()
 {
     int opcion = 25;
+    int resl;
     eEmployee empleado[TAM];
-    eEmployee aux;
     initEmployees(empleado,TAM);
     do{
             //system("cls");
