@@ -436,6 +436,11 @@ void listarAlmuerzos(eAlmuerzo listaAlmuerzo[],int tamAlmuezo,eEmpleado lista[],
     int i,j,k;
     char comida_descripcion[20];
     char empleado_nombre[20];
+    for(i=0;i<tamAlmuezo;i++)
+    {
+        for()
+
+    }
 
 
 }
