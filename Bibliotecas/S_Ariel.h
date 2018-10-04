@@ -24,10 +24,11 @@ float pedir_flotante(char mensaje[]);
  * \param es el Mensaje mostrado en caso que indique un dato Incorrecto
  * \param es el limite Inferior para verificar el dato
  * \param es el limite superior para verificar el dato
+ * \param es la cantidad de veces que solicitara el dato en caso de error
  * \return -1 si se logro cargar el dato 0 si no
  *
  */
-int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
+int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup,int intentos);
 
 /** \brief solicita un numero al usuario lo valida y guarda
  *
@@ -36,10 +37,11 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
  * \param es el mensaje a ser mostrado en caso de no cumplir la validacion
  * \param es el limite inferior de validacion
  * \param es el limite superior de validacion
+ * \param es la cantidad de veces que volvera a pedir el dato en caso de error
  * \return -1 si logro cargar el dato y 0 si no
  *
  */
-int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
+int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup,int intentos);
 
 /** \brief solicita un caracter lo valida y guarda
  *
@@ -67,11 +69,12 @@ void ordenar_char(char *lista,int tam);
  * \param es el mensaje a ser mostrado en caso que no se cumpla la validacion
  * \param es el limite inferior de validacion
  * \param es el limite superior de la validacion
+ * \param es la cantidad de veces que volvera  pedir el dato en caso de error
  * \return -1 si logro cargar el dato y 0 si no
  *
  */
 
-int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
+int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup,int intentos);
 
 /** \brief recibe una cadena de caracteres y lo guarda en un formato
  *
