@@ -4,21 +4,12 @@
 #include "S_Ariel.h"
 #define TAM 50
 
-
 int main()
 {
-    char letras[5];
     int aux;
-    printf("indique un numero:");
-    gets(letras);
-    aux=soloNumeros(letras);
-    if(aux)
+    if(get_String_soloNum(&aux,"Indique un numero: ","\n Error,solo se admiten Numeros",3))
     {
-        printf("es numerico");
-    }
-    else
-    {
-        printf("no es numerico");
+        printf("\n el numero se cargo correctamente");
     }
 
     return 0;

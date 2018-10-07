@@ -84,9 +84,7 @@ int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup,int 
     int i=-1;
     for(r=0;r<intentos;r++)
     {
-        printf(mensaje);
-        fflush(stdin);
-        gets(aux);
+        pedir_cadena(aux,mensaje);
         rels=strlen(aux);
         if(rels>=Linf&&rels<=Lsup)
         {
@@ -170,3 +168,32 @@ int soloNumeros(char vec[])
     }
     return r;
 }
+void pedir_cadena(char dep[],char mensaje[])
+{
+    printf(mensaje);
+    fflush(stdin);
+    gets(dep);
+}
+int get_String_soloNum(int *num, char msj[],char emsj[],int intentos)
+{
+    int r=0;
+    int i;
+    char aux[361];
+    for(i=0;i<intentos;i++)
+    {
+        pedir_cadena(aux,msj);
+        if(soloNumeros(aux))
+        {
+            *num=atoi(aux);
+            r=1;
+            break;
+        }
+        else
+        {
+            printf(emsj);
+        }
+    }
+
+    return r;
+}
+

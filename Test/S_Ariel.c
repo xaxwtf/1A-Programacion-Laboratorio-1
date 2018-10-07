@@ -17,34 +17,45 @@ int pedir_entero(char mensaje[])
     scanf("%d",&num);
     return num;
 }
-int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup)
+int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup, int intentos)
 {
+    int j;
     int i=-1;
     int num;
-    num=pedir_entero(msg);
-    if(num>=Linf&&num<=Lsup)
+    for(j=0;j<intentos;j++)
     {
-        *dir=num;
-    }
-    else{
-        printf(Emsg);
-        i=0;
+        num=pedir_entero(msg);
+        if(num>=Linf&&num<=Lsup)
+        {
+            *dir=num;
+            break;
+        }
+        else{
+            printf(Emsg);
+            i=0;
+        }
     }
     return i;
 }
-int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup)
+int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup,int intentos)
 {
+    int r;
     int i=-1;
     float num;
-    num=pedir_flotante(msg);
-    if(num>=Linf&&num<=Lsup)
+    for(r=0;r<intentos;r++)
     {
-        *dir=num;
-        i=0;
+        num=pedir_flotante(msg);
+        if(num>=Linf&&num<=Lsup)
+        {
+            *dir=num;
+            i=0;
+            break;
+        }
+        else{
+            printf(Emsg);
+        }
     }
-    else{
-        printf(Emsg);
-    }
+
     return i;
 }
 int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup)
@@ -65,23 +76,29 @@ int getChar(char *dir,char msg[],char Emsg[],char linf,char lsup)
     }
     return i;
 }
-int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup)
+int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup,int intentos)
 {
+    int r;
     char aux[300];
     int rels;
     int i=-1;
-    printf(mensaje);
-    gets(aux);
-    rels=strlen(aux);
-    if(rels>=Linf&&rels<=Lsup)
+    for(r=0;r<intentos;r++)
     {
-        strcpy(input,aux);
-        i=0;
+        pedir_cadena(aux,mensaje);
+        rels=strlen(aux);
+        if(rels>=Linf&&rels<=Lsup)
+        {
+            string_save(aux);
+            strcpy(input,aux);
+            i=0;
+            break;
+        }
+        else
+        {
+            printf(Emensaje);
+        }
     }
-    else
-    {
-        printf(Emensaje);
-    }
+
     return i;
 }
 void string_save(char *date)
@@ -151,3 +168,32 @@ int soloNumeros(char vec[])
     }
     return r;
 }
+void pedir_cadena(char dep[],char mensaje[])
+{
+    printf(mensaje);
+    fflush(stdin);
+    gets(dep);
+}
+int get_String_soloNum(int *num, char msj[],char emsj[],int intentos)
+{
+    int r=0;
+    int i;
+    char aux[361];
+    for(i=0;i<intentos;i++)
+    {
+        pedir_cadena(aux,msj);
+        if(soloNumeros(aux))
+        {
+            *num=atoi(aux);
+            r=1;
+            break;
+        }
+        else
+        {
+            printf(emsj);
+        }
+    }
+
+    return r;
+}
+

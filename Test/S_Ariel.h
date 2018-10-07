@@ -24,10 +24,11 @@ float pedir_flotante(char mensaje[]);
  * \param es el Mensaje mostrado en caso que indique un dato Incorrecto
  * \param es el limite Inferior para verificar el dato
  * \param es el limite superior para verificar el dato
+ * \param es la cantidad de veces que solicitara el dato en caso de error
  * \return -1 si se logro cargar el dato 0 si no
  *
  */
-int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
+int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup,int intentos);
 
 /** \brief solicita un numero al usuario lo valida y guarda
  *
@@ -36,10 +37,11 @@ int getInt(int *dir,char msg[], char Emsg[],int Linf, int Lsup);
  * \param es el mensaje a ser mostrado en caso de no cumplir la validacion
  * \param es el limite inferior de validacion
  * \param es el limite superior de validacion
+ * \param es la cantidad de veces que volvera a pedir el dato en caso de error
  * \return -1 si logro cargar el dato y 0 si no
  *
  */
-int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup);
+int getFloat(float *dir,char msg[],char Emsg [], float Linf,float Lsup,int intentos);
 
 /** \brief solicita un caracter lo valida y guarda
  *
@@ -67,11 +69,12 @@ void ordenar_char(char *lista,int tam);
  * \param es el mensaje a ser mostrado en caso que no se cumpla la validacion
  * \param es el limite inferior de validacion
  * \param es el limite superior de la validacion
+ * \param es la cantidad de veces que volvera  pedir el dato en caso de error
  * \return -1 si logro cargar el dato y 0 si no
  *
  */
 
-int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup);
+int getString(char *input, char mensaje[],char Emensaje[],int Linf,int Lsup,int intentos);
 
 /** \brief recibe una cadena de caracteres y lo guarda en un formato
  *
@@ -106,4 +109,24 @@ int soloNumeros(char vec[]);
  *
  */
 int soloLetras(char vec[]);
+
+/** \brief Imprime un mensaje y solicita una cadena de caracteres
+ *
+ * \param es la variable donde se guardara la cadena
+ * \param es el mensaje a ser imprimido por pantalla
+ * \return
+ *
+ */
+void pedir_cadena(char dep[],char mensaje[]);
+
+/** \brief solicita un numero al usuario y valida que solo sea un numero
+ *
+ * \param es la direcion de memoria donde se guardara el dato
+ * \param es el mensaje a ser motrado al solicitar el dato
+ * \param es el mensaje mostrado en caso de error
+ * \param es la cantidad de veces que volvera a solicitar el dato en caso de error
+ * \return 1 si logro cargar el dato y 0 si no
+ *
+ */
+int get_String_soloNum(int *num, char msj[],char emsj[],int intentos);
 #endif // S_Ariel_H_INCLUDED

@@ -109,4 +109,24 @@ int soloNumeros(char vec[]);
  *
  */
 int soloLetras(char vec[]);
+
+/** \brief Imprime un mensaje y solicita una cadena de caracteres
+ *
+ * \param es la variable donde se guardara la cadena
+ * \param es el mensaje a ser imprimido por pantalla
+ * \return
+ *
+ */
+void pedir_cadena(char dep[],char mensaje[]);
+
+/** \brief solicita un numero al usuario y valida que solo sea un numero
+ *
+ * \param es la direcion de memoria donde se guardara el dato
+ * \param es el mensaje a ser motrado al solicitar el dato
+ * \param es el mensaje mostrado en caso de error
+ * \param es la cantidad de veces que volvera a solicitar el dato en caso de error
+ * \return 1 si logro cargar el dato y 0 si no
+ *
+ */
+int get_String_soloNum(int *num, char msj[],char emsj[],int intentos);
 #endif // S_Ariel_H_INCLUDED
