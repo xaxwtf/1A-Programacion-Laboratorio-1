@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "S_Ariel.h"
 #include "juegos.h"
 #include "clientes.h"
@@ -98,7 +99,7 @@ void modificarJuego(eJuego *lista,int tam)
 }
 void imprimirJuego(eJuego juego)
 {
-     printf("\n %d      %5s    %2.f",juego.codigo,juego.descripcion,juego.importe);
+     printf("\n %d     %5s         %2.f\n",juego.codigo,juego.descripcion,juego.importe);
 }
 int bajaJuego(eJuego *lista,int tam)
 {
@@ -153,6 +154,7 @@ void ordenarJuegos(eJuego *lista,int tam)
 {
     int i,j;
     eJuego aux;
+    printf("\njuego: \n Codigo    Nombre       Importe \n");
     for(i=0;i<tam;i++)
     {
         for(j=i+1;j<tam;j++)
@@ -173,4 +175,18 @@ void ordenarJuegos(eJuego *lista,int tam)
 
     }
 
+}
+int hayJuegos(eJuego *lista,int tam,int dato)
+{
+    int r=-1;
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(lista[i].codigo!=dato)
+        {
+            r=i;
+            break;
+        }
+    }
+    return r;
 }
