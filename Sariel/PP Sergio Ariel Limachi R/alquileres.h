@@ -47,4 +47,14 @@ int buscarPrimerLibreAlquiler(eAlquiler* lista,int len,int dato);
  */
 
 int alquilarJuego(eAlquiler *lista,int tam,eJuego *juegos,int tamj,eCliente *clientes, int tamCte,eFecha x, int codAlq);
+void informes(eJuego *juegos, int tamjs,eCliente *clientes,int tamCte, eAlquiler *alquileres, int tamAlq);
+float cargarImportejuego(eJuego *lista, int tam,int codAlq);
+float obtenerTotalJuegosAlquilados(eAlquiler *lista,int tamAlq, eJuego *juegos,int tamj);
+float obtenerPromedioJuegosAlquilados(eAlquiler *lista,int tam,float Total);
+void mostrarPromYtotal(eAlquiler *alquileres, int tamAlq,eJuego *juegos, int tamJs);
+int contJuegosDeImpMenorAlprom(eAlquiler *alquileres, int tamAlq, eJuego *juegos, int tam);
+void imprimirCtesSegunJuego(eJuego *juegos,int tamJs,eCliente *clientes,int tamCte,eAlquiler *lista, int tamLis);
+void imprimirJuegosSegunCliente(eJuego *juegos,int tamJs,eCliente *clientes,int tamCte,eAlquiler *lista, int tamLis);
+void ordenarBurbugeo(eJuego *lista, int tam);
+void listarJuegos(eJuego *lista, int tam);
 #endif // alquileres_H_INCLUDED

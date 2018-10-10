@@ -23,13 +23,13 @@ int main()
     eJuego juegos[TAM];
     eCliente clientes[LEN];
     eAlquiler alquileres[LON];
-    eFecha fecha={{10},{10},{2018}};
+    eFecha fecha={10,10,2018};
     initJuegos(juegos,TAM,-1);
     initClientes(clientes,LEN,-1);
     initAlquiler(alquileres,LON,-1);
     do{
         system("cls");
-        if(!get_String_soloNum(&opcion,"----ALQUILERES DE JUEGOS----\n 1-JUEGOS \n 2-CLIENTES \n 3-ALQUILERES \n 0-SALIR \n ","Error,Indique solo numeros\n",1))
+        if(!get_String_soloNum(&opcion,"----ALQUILERES DE JUEGOS----\n 1-JUEGOS \n 2-CLIENTES \n 3-ALQUILERES \n 4-INFORMES \n 0-SALIR \n ","Error,Indique solo numeros\n",1))
         {
             system("pause");
         }
@@ -62,7 +62,7 @@ int main()
                                 modificarJuego(juegos,TAM);
                             }
                             else{
-                                printf("\n No hay datos Cargados");
+                                printf("\n No hay datos Cargados\n");
                                 system("pause");
                             }
 
@@ -170,6 +170,9 @@ int main()
                     printf("\n no hay espacio para mas registros de alquiler\n");
                     system("pause");
                 }
+                break;
+            case 4:
+                informes(juegos,TAM,clientes,LEN,alquileres,LON);
                 break;
         }
     }while(opcion!=0);
