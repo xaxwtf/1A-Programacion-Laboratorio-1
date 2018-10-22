@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1540209739 source:d:\sariel\punteros v2\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1540209739 d:\sariel\punteros v2\s_ariel.h
+
