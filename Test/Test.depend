@@ -4,10 +4,11 @@
 	<stdlib.h>
 	<string.h>
 
-1536759942 source:d:\sariel\1a-programacion-laboratorio-1\test\main.c
+1541427258 source:d:\sariel\1a-programacion-laboratorio-1\test\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"S_Ariel.h"
 
 1538852222 source:h:\1a\1a-programacion-laboratorio-1\test\main.c
 	<stdio.h>
@@ -22,4 +23,21 @@
 	<stdlib.h>
 	<string.h>
 	"S_Ariel.h"
+
+1541426747 source:d:\sariel\1a-programacion-laboratorio-1\test\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1541426747 d:\sariel\1a-programacion-laboratorio-1\test\s_ariel.h
+
+1541426747 source:d:\sariel\1a-programacion-laboratorio-1\test\arrayemployees.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"S_Ariel.h"
+	"ArrayEmployees.h"
+
+1541426747 d:\sariel\1a-programacion-laboratorio-1\test\arrayemployees.h
 
