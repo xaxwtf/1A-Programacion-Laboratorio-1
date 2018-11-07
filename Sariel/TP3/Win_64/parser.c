@@ -12,6 +12,9 @@
  */
 int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
 {
+    Employee* empleado=(Employee*)malloc(sizeof(Employee));
+    pFile
+
 
     return 1;
 }

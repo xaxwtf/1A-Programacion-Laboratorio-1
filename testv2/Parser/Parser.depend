@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1541603336 source:d:\sariel\1a-programacion-laboratorio-1\testv2\parser\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
