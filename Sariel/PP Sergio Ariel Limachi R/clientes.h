@@ -36,7 +36,7 @@ int buscarPrimerLibreCliente(eCliente* lista,int len,int dato);
  * \return 1 si logro cargar el cliente y 0 si no
  *
  */
-int altaCliente(eCliente *lista,int tam,int codigo);
+int altaCliente(eCliente *lista,int tam,int* codigo);
 
 /** \brief permite cargar un sexo que solo puede ser m o f
  *

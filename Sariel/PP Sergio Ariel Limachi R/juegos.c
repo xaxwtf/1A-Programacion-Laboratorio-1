@@ -27,7 +27,7 @@ int buscarPrimerLibre(eJuego* lista,int len,int dato)
     }
     return r;
 }
-int altaJuego(eJuego *lista,int tam,int codigo)
+int altaJuego(eJuego *lista,int tam,int* codigo)
 {
     eJuego aux;
     int ok=1;
@@ -35,17 +35,17 @@ int altaJuego(eJuego *lista,int tam,int codigo)
     r=buscarPrimerLibre(lista,tam,-1);
     if(r==-1)
     {
-        printf("\n Ha alcanzado el Limite de Juegos a cargar");
+        ok=-1;
     }
     else
     {
-        if(getString(aux.descripcion,"\n Indique el nombre del juego: ","Error, el Nombre del juego no debe tener mas de 50 caracteres",0,50,3)==-1)
+        if(getString(aux.descripcion,"\n Indique el nombre del juego : ","\nError, el Nombre del juego no debe tener mas de 50 caracteres\n",0,50,3)==-1)
             {
                 ok=0;
             }
-        if(ok==1&&(getFloat(&aux.importe,"indique el Precio de Alquieres del Producto: ","Error,el importe debe ser mayor a 0",1,999999999999,3)==0))
+        if(ok==1&&(getFloat(&aux.importe,"\nIndique el Precio de Alquieres del Producto: ","\nError,el importe debe ser mayor a 0\n",1,999999999999,3)==0))
         {
-            aux.codigo=codigo;
+            aux.codigo=1000+*codigo;
             lista[r]=aux;
         }
         else

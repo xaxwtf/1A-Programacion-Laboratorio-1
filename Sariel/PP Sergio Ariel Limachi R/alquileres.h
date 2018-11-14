@@ -46,7 +46,7 @@ int buscarPrimerLibreAlquiler(eAlquiler* lista,int len,int dato);
  *
  */
 
-int alquilarJuego(eAlquiler *lista,int tam,eJuego *juegos,int tamj,eCliente *clientes, int tamCte,eFecha x, int codAlq);
+int alquilarJuego(eAlquiler *lista,int tam,eJuego *juegos,int tamj,eCliente *clientes, int tamCte,int* codAlq);
 void informes(eJuego *juegos, int tamjs,eCliente *clientes,int tamCte, eAlquiler *alquileres, int tamAlq);
 float cargarImportejuego(eJuego *lista, int tam,int codAlq);
 float obtenerTotalJuegosAlquilados(eAlquiler *lista,int tamAlq, eJuego *juegos,int tamj);
@@ -55,6 +55,15 @@ void mostrarPromYtotal(eAlquiler *alquileres, int tamAlq,eJuego *juegos, int tam
 int contJuegosDeImpMenorAlprom(eAlquiler *alquileres, int tamAlq, eJuego *juegos, int tam);
 void imprimirCtesSegunJuego(eJuego *juegos,int tamJs,eCliente *clientes,int tamCte,eAlquiler *lista, int tamLis);
 void imprimirJuegosSegunCliente(eJuego *juegos,int tamJs,eCliente *clientes,int tamCte,eAlquiler *lista, int tamLis);
-void ordenarBurbugeo(eJuego *lista, int tam);
-void listarJuegos(eJuego *lista, int tam);
+void ordenarBurbugeo(eJuego *a, int len);
+void ImprimirJuegosOrdxImporte(eJuego *lista, int tam);
+void ordenacion_insercion (eCliente * A, int N);
+void impimirClientesOrdxApellido(eCliente* lista,int tam);
+int ocurrenciasdeJuego(eAlquiler* lista,int tam,int idJuego);
+int ocurrenciasdeCliente(eAlquiler* lista,int tam,int idCliente);
+int imprimirjuegoMenosAlq(eAlquiler* alquileres,int tamAlq,eJuego* lista,int tam);
+int imprimirClienteconMasalq(eAlquiler* alquileres,int tamAlq,eCliente* lista,int tam);
+int cargarFecha(eFecha* hoy,int intentos);
+int imprimirjuegosxFecha(eAlquiler* alquileres,int tamAlq,eJuego* juegos,int tamJs);
+int listarClientesxfecha(eAlquiler* alquileres,int tamAlq,eCliente* clientes,int tamCte);
 #endif // alquileres_H_INCLUDED

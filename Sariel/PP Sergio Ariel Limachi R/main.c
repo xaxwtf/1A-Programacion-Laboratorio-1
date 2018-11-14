@@ -8,7 +8,7 @@
 #include "clientes.h"
 
 #include "alquileres.h"
-#define LEN 50 //cant de clientes
+#define LEN 1 //cant de clientes
 #define LON 50 //cant de alquileres
 #define TAM 10 //cant de juegos
 
@@ -20,10 +20,10 @@ int main()
     int codjuego=0;
     int codCliente=0;
     int codAlquiler=0;
+    int r;
     eJuego juegos[TAM];
     eCliente clientes[LEN];
     eAlquiler alquileres[LON];
-    eFecha fecha={10,10,2018};
     initJuegos(juegos,TAM,-1);
     initClientes(clientes,LEN,-1);
     initAlquiler(alquileres,LON,-1);
@@ -45,16 +45,17 @@ int main()
                     switch(subOpcion)
                     {
                         case 1:
-                            if(altaJuego(juegos,TAM,1000+codjuego))
+                            r=altaJuego(juegos,TAM,&codjuego);
+                            if(r==1)
                             {
                                 codjuego++;
-                                printf("el juego se cargo corretamente");
-                                system("pause");
+                                printf("el juego se cargo corretamente\n");
+
                             }
-                            else{
-                                printf("\nel dato no se ah guardado\n");
-                                system("pause");
+                            else if(r==0){
+                                printf("\n El dato no se ah guardado\n");
                             }
+                            system("pause");
                             break;
                         case 2:
                             if(hayJuegos(juegos,TAM,-1)!=-1)
@@ -109,12 +110,19 @@ int main()
                     switch(subOpcion)
                     {
                         case 1:
-                            if(altaCliente(clientes,LEN,100+codCliente))
+                            r=altaCliente(clientes,LEN,&codCliente);
+                            if(r==1)
                             {
                                 codCliente++;
                                 printf("\nEl cliente se ha cargado correctamente \n");
-                                system("pause");
+
                             }
+                            else if(r==-1)
+                            {
+                                printf("\n Se ha alcanzado el limite de clientes a cargar\n");
+
+                            }
+                            system("pause");
                             break;
                         case 2:
                             if(hayClientes(clientes,LEN,-1)!=-1)
@@ -160,16 +168,16 @@ int main()
 
                 break;
             case 3:
-                if(alquilarJuego(alquileres,LON,juegos,TAM,clientes,LEN,fecha,codAlquiler))
+                r=alquilarJuego(alquileres,LON,juegos,TAM,clientes,LEN,&codAlquiler);
+                if(r==1)
                 {
                     codAlquiler++;
                     printf("\n Registro Creado, con exito\n");
-                    system("pause");
                 }
-                else{
+                else if(r==-1){
                     printf("\n no hay espacio para mas registros de alquiler\n");
-                    system("pause");
                 }
+                system("pause");
                 break;
             case 4:
                 informes(juegos,TAM,clientes,LEN,alquileres,LON);

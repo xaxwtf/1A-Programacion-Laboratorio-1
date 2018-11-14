@@ -37,7 +37,7 @@
 
 1539004944 d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\alquileres.h
 
-1539140040 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.c
+1542152534 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -46,7 +46,7 @@
 	"clientes.h"
 	"alquileres.h"
 
-1539137988 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.c
+1542153711 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -54,13 +54,13 @@
 	"juegos.h"
 	"clientes.h"
 
-1539104069 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.h
+1541636603 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.h
 
-1539138874 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.h
+1542151555 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.h
 
-1539139551 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.h
+1542151336 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.h
 
-1539137492 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.c
+1542153682 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -68,7 +68,7 @@
 	"juegos.h"
 	"clientes.h"
 
-1539140046 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\main.c
+1542153613 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\main.c
 	<stdio.h>
 	<stdlib.h>
 	"S_Ariel.h"
@@ -76,9 +76,9 @@
 	"clientes.h"
 	"alquileres.h"
 
-1539140040 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.h
+1542151736 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.h
 
-1539104069 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.c
+1541636603 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

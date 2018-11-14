@@ -27,7 +27,7 @@ int buscarPrimerLibreCliente(eCliente* lista,int len,int dato)
     }
     return r;
 }
-int altaCliente(eCliente *lista,int tam,int codigo)
+int altaCliente(eCliente *lista,int tam,int* codigo)
 {
     eCliente aux;
     int ok=1;
@@ -36,7 +36,7 @@ int altaCliente(eCliente *lista,int tam,int codigo)
     if(r==-1)
     {
         printf("\n Ha alcanzado el Limite de cliente a cargar\n");
-        system("pause");
+        ok=-1;
     }
     else
     {
@@ -52,7 +52,7 @@ int altaCliente(eCliente *lista,int tam,int codigo)
         cargarSexo(&aux.sexo,"\n indique el sexo(f/m): ","\nError, solo se aceptan f o m\n");
         if(ok==1&&(getString(aux.domicilio,"\n Indique su Domicilio: ","\nError, el Domicilio no debe ter mas de 50 caracteres\n",1,50,3)==0))
         {
-            aux.codCliente=codigo;
+            aux.codCliente=100+*codigo;
             lista[r]=aux;
         }
         else

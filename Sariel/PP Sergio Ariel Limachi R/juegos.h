@@ -76,7 +76,7 @@ void ordenarJuegos(eJuego *lista,int tam);
  * \return 1 si logro cargar el juego y 0 si no
  *
  */
-int altaJuego(eJuego *lista,int tam,int codigo);
+int altaJuego(eJuego *lista,int tam,int* codigo);
 
 /** \brief permite saber si hay por lo menos un juego cargado
  *
