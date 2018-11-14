@@ -131,3 +131,50 @@
 	<string.h>
 	"S_Ariel.h"
 
+1542198350 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1542198350 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\s_ariel.h
+
+1542198350 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\juegos.h
+
+1542198350 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\clientes.h
+
+1542198350 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\alquileres.h
+
+1542198350 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1542198350 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1542198350 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1542198350 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\pp sergio ariel limachi r\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
