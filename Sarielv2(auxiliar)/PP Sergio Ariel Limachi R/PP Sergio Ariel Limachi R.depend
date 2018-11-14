@@ -1,0 +1,133 @@
+# depslib dependency file v1.0
+1539001441 source:d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\alquileres.c
+
+1539010106 source:d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1538999653 d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\s_ariel.h
+
+1539009986 d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\juegos.h
+
+1539011932 d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\clientes.h
+
+1538999653 source:d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1539012191 source:d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1539012348 source:d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1539004944 d:\nueva carpeta (5)\nueva carpeta\sariel\pp sergio ariel limachi r\alquileres.h
+
+1542152534 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1542153711 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1541636603 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.h
+
+1542151555 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.h
+
+1542151336 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.h
+
+1542153682 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1542153613 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1542151736 h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.h
+
+1541636603 source:h:\1a\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1539184121 source:d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1539172249 d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.h
+
+1539172249 d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.h
+
+1539172249 d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.h
+
+1539183484 d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\alquileres.h
+
+1539172249 source:d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1539172249 source:d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+
+1539174230 source:d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1539172249 source:d:\sariel asd\1a-programacion-laboratorio-1\sariel\pp sergio ariel limachi r\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
