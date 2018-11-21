@@ -57,7 +57,7 @@ static Node* getNode(LinkedList* this, int nodeIndex)
     Node* nAct;
     if(this!=NULL)
     {
-        if(nodeIndex>= 0&& nodeIndex<this->size)
+        if(nodeIndex>= 0&& nodeIndex<ll_len(this))
         {
             if(nodeIndex==0)
             {
@@ -192,11 +192,13 @@ int ll_add(LinkedList* this, void* pElement)
 void* ll_get(LinkedList* this, int index)
 {
     void* returnAux = NULL;
+    Node* aux;
     if(this!=NULL)
     {
         if(index>=0 && index<this->size)
         {
-            returnAux=getNode(this,index);
+            aux=getNode(this,index);
+            returnAux=aux->pElement;
         }
 
     }
@@ -217,6 +219,16 @@ void* ll_get(LinkedList* this, int index)
 int ll_set(LinkedList* this, int index,void* pElement)
 {
     int returnAux = -1;
+    Node* aux;
+    if(this!=NULL)
+    {
+        if(index>=0&&index<ll_len(this))
+        {
+            aux=getNode(this,index);
+            aux->pElement=pElement;
+            returnAux=0;
+        }
+    }
 
     return returnAux;
 }
@@ -233,6 +245,34 @@ int ll_set(LinkedList* this, int index,void* pElement)
 int ll_remove(LinkedList* this,int index)
 {
     int returnAux = -1;
+    Node* prev;
+    Node* next;
+    if(this!=NULL)
+    {
+        if(index>=0 && index<ll_len(this))
+        {
+            if(index==0)
+            {
+                prev=this->pFirstNode;
+                next=prev->pNextNode;
+                this->pFirstNode=next;
+                free(prev);
+            }
+            else{
+                next=this->pFirstNode;
+                while(index>0)
+                {
+                    prev=next;
+                    next=prev->pNextNode;
+                    index--;
+                }
+                prev->pNextNode=next->pNextNode;
+                free(next);
+            }
+            this->size--;
+            returnAux=0;
+        }
+    }
 
     return returnAux;
 }
@@ -248,7 +288,15 @@ int ll_remove(LinkedList* this,int index)
 int ll_clear(LinkedList* this)
 {
     int returnAux = -1;
-
+    int len;
+    if(this!=NULL)
+    {
+        for(len=ll_len(this)-1;len>=0;len--)
+        {
+            ll_remove(this,len);
+        }
+        returnAux=0;
+    }
     return returnAux;
 }
 
@@ -263,6 +311,12 @@ int ll_clear(LinkedList* this)
 int ll_deleteLinkedList(LinkedList* this)
 {
     int returnAux = -1;
+    if(this!=NULL)
+    {
+        ll_clear(this);
+        free(this);
+        returnAux=0;
+    }
 
     return returnAux;
 }
@@ -278,7 +332,30 @@ int ll_deleteLinkedList(LinkedList* this)
 int ll_indexOf(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
+    int i;
+    Node* prev;
+    Node* next;
+    if(this!=NULL)
+    {
+        next=this->pFirstNode;
+        if(next->pElement==pElement)
+        {
+            returnAux=0;
+        }
+        else{
 
+            for(i=1;i<ll_len(this);i++)
+            {
+                prev=next;
+                next=prev->pNextNode;
+                if(next->pElement==pElement)
+                {
+                    returnAux=i;
+                    break;
+                }
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -293,6 +370,19 @@ int ll_indexOf(LinkedList* this, void* pElement)
 int ll_isEmpty(LinkedList* this)
 {
     int returnAux = -1;
+    if(this!=NULL)
+    {
+        if(ll_len(this)>0)
+        {
+            returnAux=0;
+        }
+        else{
+            returnAux=1;
+        }
+    }
+    else{
+        returnAux=-1;
+    }
 
     return returnAux;
 }
@@ -309,7 +399,10 @@ int ll_isEmpty(LinkedList* this)
 int ll_push(LinkedList* this, int index, void* pElement)
 {
     int returnAux = -1;
-
+    if(this!=NULL)
+    {
+        returnAux=addNode(this,index,pElement);
+    }
     return returnAux;
 }
 
@@ -325,6 +418,16 @@ int ll_push(LinkedList* this, int index, void* pElement)
 void* ll_pop(LinkedList* this,int index)
 {
     void* returnAux = NULL;
+    Node* aux;
+    if(this!=NULL)
+    {
+        if(index>=0 && index<ll_len(this))
+        {
+            aux=getNode(this,index);
+            returnAux=aux->pElement;
+            ll_remove(this,index);
+        }
+    }
 
     return returnAux;
 }
@@ -341,7 +444,21 @@ void* ll_pop(LinkedList* this,int index)
 int ll_contains(LinkedList* this, void* pElement)
 {
     int returnAux = -1;
-
+    int i;
+    Node* aux;
+    if(this!=NULL)
+    {
+        returnAux=0;
+        for(i=0;i<ll_len(this);i++)
+        {
+            aux=getNode(this,i);
+            if(aux->pElement==pElement)
+            {
+                returnAux=1;
+                break;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -357,7 +474,21 @@ int ll_contains(LinkedList* this, void* pElement)
 int ll_containsAll(LinkedList* this,LinkedList* this2)
 {
     int returnAux = -1;
-
+    int i;
+    Node* aux;
+    if(this!=NULL&&this2!=NULL)
+    {
+        returnAux=1;
+        for(i=0;i<ll_len(this2);i++)
+        {
+            aux=getNode(this2,i);
+            if(ll_contains(this,aux->pElement)==0)
+            {
+                returnAux=0;
+                break;
+            }
+        }
+    }
     return returnAux;
 }
 
@@ -373,9 +504,46 @@ int ll_containsAll(LinkedList* this,LinkedList* this2)
 */
 LinkedList* ll_subList(LinkedList* this,int from,int to)
 {
-    LinkedList* cloneArray = NULL;
+    LinkedList* aux=NULL;
+    int i;
+    int k=0;
+    Node* prev;
+    Node* next;
+    if(this!=NULL)
+    {
+        if((from>=0 && to>0)&& (from<ll_len(this)&&to<=ll_len(this)))
+        {
+            aux=ll_newLinkedList();
+            if(aux!=NULL)
+            {
+                next=this->pFirstNode;
+                if(from==0)
+                {
+                    addNode(aux,k,next->pElement);
+                    for(i=1;i<to;i++)
+                    {
+                        prev=next;
+                        next=prev->pNextNode;
+                        addNode(aux,i,next->pElement);
+                    }
+                }
+                else{
+                    for(i=1;i<ll_len(this);i++)
+                    {
+                        prev=next;
+                        next=prev->pNextNode;
+                        if(i>=from && i<to)
+                        {
+                            addNode(aux,k,next->pElement);
+                            k++;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
-    return cloneArray;
+    return aux;
 }
 
 
@@ -389,6 +557,10 @@ LinkedList* ll_subList(LinkedList* this,int from,int to)
 LinkedList* ll_clone(LinkedList* this)
 {
     LinkedList* cloneArray = NULL;
+    if(this!=NULL)
+    {
+        cloneArray=ll_subList(this,0,ll_len(this));
+    }
 
     return cloneArray;
 }
@@ -404,6 +576,62 @@ LinkedList* ll_clone(LinkedList* this)
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux =-1;
+    int i,k;
+    Node* datoA;
+    Node* datoB;
+    void* valor;
+    if(this!=NULL)
+    {
+        if(pFunc!=NULL)
+        {
+            switch(order)
+            {
+                case 1:
+                    for(i=0;i<ll_len(this);i++)
+                    {
+                        for(k=i+1;k<ll_len(this);k++)
+                        {
+                            datoA=getNode(this,i);
+                            datoB=getNode(this,k);
+                            if(pFunc(datoA->pElement,datoB->pElement)==1)
+                            {
+                                valor=datoA->pElement;
+                                datoA->pElement=datoB->pElement;
+                                datoB->pElement=valor;
+                            }
+
+                        }
+                    }
+                    returnAux=0;
+                    break;
+                case 0:
+                    for(i=0;i<ll_len(this);i++)
+                    {
+                        for(k=i+1;k<ll_len(this);k++)
+                        {
+                            datoA=getNode(this,i);
+                            datoB=getNode(this,k);
+                            if(pFunc(datoA->pElement,datoB->pElement)==-1)
+                            {
+                                valor=datoA->pElement;
+                                datoA->pElement=datoB->pElement;
+                                datoB->pElement=valor;
+                            }
+
+                        }
+                    }
+                    returnAux=0;
+                    break;
+
+                default:
+                    returnAux=-1;
+            }
+
+        }
+
+
+
+    }
 
     return returnAux;
 

@@ -196,4 +196,24 @@ int get_String_soloNum(int *num, char msj[],char emsj[],int intentos)
 
     return r;
 }
+int cargarSexo(char *dato,char mensaje[],char emsj[],int intentos)
+{
+    char aux;
+    int i;
+    int flag=0;
+    for(i=0;i<intentos;i++)
+    {
+        printf(mensaje);
+        fflush(stdin);
+        scanf("%c",&aux);
+        if(aux=='f'||aux=='m')
+        {
+            *dato=aux;
+            flag =1;
+            break;
+        }
+        printf(emsj);
 
+    }
+    return flag;
+}

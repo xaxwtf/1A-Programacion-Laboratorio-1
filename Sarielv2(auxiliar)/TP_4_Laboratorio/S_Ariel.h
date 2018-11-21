@@ -129,4 +129,15 @@ void pedir_cadena(char dep[],char mensaje[]);
  *
  */
 int get_String_soloNum(int *num, char msj[],char emsj[],int intentos);
+
+/** \brief carga el sexo de una persona
+ *
+ * \param es la direcion donde se guardara el dato
+ * \param  es el mensaje a ser mostrado
+ * \param es el mensaje a ser mortrado en caso de error
+ * \param es la cantidad de veces que volvera  pedir el dato en caso de error
+ * \return 1 si logro cargar el dato y 0 si no
+ *
+ */
+int cargarSexo(char *dato,char mensaje[],char emsj[],int intentos);
 #endif // S_Ariel_H_INCLUDED

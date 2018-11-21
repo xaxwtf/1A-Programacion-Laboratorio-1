@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1542772494 source:h:\1a\practicas\tp_4_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"S_Ariel.h"
+	"eFecha.h"
+	"control.h"
+
+1542668826 source:h:\1a\practicas\tp_4_laboratorio\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542229093 h:\1a\practicas\tp_4_laboratorio\linkedlist.h
+
+1542768307 source:h:\1a\practicas\tp_4_laboratorio\efecha.c
+	"S_Ariel.h"
+	"eFecha.h"
+	<stdio.h>
+
+1542670746 h:\1a\practicas\tp_4_laboratorio\s_ariel.h
+
+1542768355 h:\1a\practicas\tp_4_laboratorio\efecha.h
+
+1542671396 source:h:\1a\practicas\tp_4_laboratorio\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1542766423 source:h:\1a\practicas\tp_4_laboratorio\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"empleados.h"
+	"eFecha.h"
+
+1542763795 source:h:\1a\practicas\tp_4_laboratorio\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"eFecha.h"
+	"empleados.h"
+	"LinkedList.h"
+	"S_Ariel.h"
+	<string.h>
+
+1542763119 h:\1a\practicas\tp_4_laboratorio\empleados.h
+	"eFecha.h"
+
+1542772225 h:\1a\practicas\tp_4_laboratorio\control.h
+	"LinkedList.h"
+
+1542772853 source:h:\1a\practicas\tp_4_laboratorio\control.c
+	"control.h"
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"S_Ariel.h"
+	"eFecha.h"
+	"empleados.h"
+
+1542766368 h:\1a\practicas\tp_4_laboratorio\parser.h
+	"LinkedList.h"
+
