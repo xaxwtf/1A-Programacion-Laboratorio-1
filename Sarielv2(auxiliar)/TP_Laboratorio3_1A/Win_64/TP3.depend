@@ -145,3 +145,49 @@
 	<string.h>
 	"S_Ariel.h"
 
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"S_Ariel.h"
+	"parser.h"
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\linkedlist.h
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\employee.h
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\s_ariel.h
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\parser.h
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\employee.c
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	"Employee.h"
+	"S_Ariel.h"
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"S_Ariel.h"
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\controller.h
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	<string.h>
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_laboratorio3_1a\win_64\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+

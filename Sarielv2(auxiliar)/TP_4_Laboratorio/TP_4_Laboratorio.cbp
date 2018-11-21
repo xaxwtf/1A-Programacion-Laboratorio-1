@@ -43,10 +43,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="control.h" />
-		<Unit filename="eFecha.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="eFecha.h" />
 		<Unit filename="empleados.c">
 			<Option compilerVar="CC" />
 		</Unit>

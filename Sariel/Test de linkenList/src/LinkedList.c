@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "LinkedList.h"
+#include "../inc/LinkedList.h"
 
 
 static Node* getNode(LinkedList* this, int nodeIndex);
@@ -635,21 +635,5 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 
     return returnAux;
 
-}
-int maps(LinkedList* lista, int(*pfunc)(void*))
-{
-    int returnAux =-1;
-    int i;
-    void* valor;
-    if(lista!=NULL)
-    {
-         for(i=0;i<ll_len(lista);i++)
-         {
-             valor=ll_get(lista,i);
-             pfunc(valor);
-             returnAux=i;
-         }
-    }
-    return returnAux;
 }
 

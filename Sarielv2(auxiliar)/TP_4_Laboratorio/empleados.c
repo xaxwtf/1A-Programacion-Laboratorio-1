@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include "string.h"
 #include "empleados.h"
-#include "eFecha.h"
-eEmpleado* new_Empleado(char* idStr, char* nombreStr,char* apellidoStr,char* sexoStr,char* salarioStr,char* dia,char*mes,char* anio)
+eEmpleado* new_Empleado(char* idStr, char* nombreStr,char* horasTrabajadasStr, char* sueldoStr)
 {
     eEmpleado* nuevo;
     nuevo=(eEmpleado*)malloc(sizeof(eEmpleado));
@@ -11,12 +10,8 @@ eEmpleado* new_Empleado(char* idStr, char* nombreStr,char* apellidoStr,char* sex
     {
         nuevo->id=atoi(idStr);
         strcpy(nuevo->nombre,nombreStr);
-        strcpy(nuevo->apellido,apellidoStr);
-        nuevo->sexo=sexoStr[0];
-        nuevo->salario=atof(salarioStr);
-        nuevo->FechadeContratacion.dia=atoi(dia);
-        nuevo->FechadeContratacion.mes=atoi(mes);
-        nuevo->FechadeContratacion.anio=atoi(anio);
+        nuevo->horasTrabajadas=atoi(horasTrabajadasStr);
+        nuevo->sueldo=atof(sueldoStr);
     }
     return nuevo;
 }
@@ -36,36 +31,6 @@ int setNombre(eEmpleado* emp, char*nombre)
     if(strlen(nombre)<31)
     {
         strcpy(emp->nombre,nombre);
-        r=1;
-    }
-    return r;
-}
-int setApellido(eEmpleado* emp, char*apellido)
-{
-    int r=0;
-    if(strlen(apellido)<31)
-    {
-        strcpy(emp->apellido,apellido);
-        r=1;
-    }
-    return r;
-}
-int setSexo(eEmpleado* emp, char sexo)
-{
-    int r=0;
-    if(sexo=='m'||sexo=='f')
-    {
-        emp->sexo=sexo;
-        r=1;
-    }
-    return r;
-}
-int setSalario(eEmpleado* emp, float Salario)
-{
-    int r=0;
-    if(Salario>0)
-    {
-        emp->salario=Salario;
         r=1;
     }
     return r;

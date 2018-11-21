@@ -64,3 +64,63 @@
 1542766368 h:\1a\practicas\tp_4_laboratorio\parser.h
 	"LinkedList.h"
 
+1542808153 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\control.c
+	"control.h"
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"S_Ariel.h"
+	"empleados.h"
+
+1542808176 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\control.h
+	"LinkedList.h"
+
+1542806652 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\linkedlist.h
+
+1542804243 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\parser.h
+	"LinkedList.h"
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\s_ariel.h
+
+1542800911 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\efecha.h
+
+1542802921 d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\empleados.h
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\efecha.c
+	"S_Ariel.h"
+	"eFecha.h"
+	<stdio.h>
+
+1542806652 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542808233 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"S_Ariel.h"
+	"control.h"
+
+1542804245 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"empleados.h"
+	"LinkedList.h"
+	"S_Ariel.h"
+	<string.h>
+
+1542800911 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1542802509 source:d:\sariel\1a-programacion-laboratorio-1\sarielv2(auxiliar)\tp_4_laboratorio\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"empleados.h"
+

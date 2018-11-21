@@ -3,13 +3,14 @@
 #include <stdlib.h>
 #include "parser.h"
 #include "S_Ariel.h"
-#include "eFecha.h"
 #include "empleados.h"
-int cargarDatosdesdeArchivoTexto(char* patch,LinkedList* lista)
+int cargarDatosdesdeArchivoTexto(LinkedList* lista)
 {
+    char nameFile[30];
     FILE* pFile;
     int r=0;
-    pFile=fopen(patch,"r");
+    getString(nameFile,"\nindique el Nombre del archivo a abrir: ","\nError,\n",1,30,3);
+    pFile=fopen(nameFile,"r");
     if(pFile!=NULL)
     {
         r=parser_EmployeeFromText(pFile,lista);
@@ -38,35 +39,30 @@ int altaEmpleado(LinkedList* lista)
     emp=(eEmpleado*)malloc(sizeof(eEmpleado));
     if(emp!=NULL)
     {
-        if(getString(emp->nombre,"\nIndique el nombre: ","\nError, el Nombre no debe tener mas de 30 caracteres \n",0,30,3))
-        {
-            ok=1;
-        }
-        if(ok==1 && getString(emp->apellido,"\nIndique el Apellido: ","\nError, el Apellido no debe tener mas de 30 caracteres \n",0,30,3)==0)
+        if(!getInt(&emp->id,"\nIndique el Numero de ID: \n","Error,el ID indicado No es Valido\n",1,9999999,3))
         {
             ok=0;
         }
-        if(ok==1 && cargarSexo(&emp->sexo,"\nIndique el sexo(m/f): ","\nError, indique m(masculino)o f(femenino)\n",3)==0)
+        if(ok==1 && getString(emp->nombre,"\nIndique el Nombre: ","Error,el Nombre debe tener mas de 2 caracteres",3,227,3)!=1)
+            {
+                ok=0;
+            }
+        if(ok==1 && getInt(&emp->horasTrabajadas,"\nIndique las Horas trabajadas: \n","Error,El Numero Minimo de horas es 8",8,1000,3)!=1)
         {
             ok=0;
         }
-        if(ok==1 && getFloat(&emp->salario,"\n Indique el salario: ","\nError,el salario debe ser mayo a 0\n",1,999999,3)==0)
-        {
-            ok=0;
-        }
-
-        if(ok==1 &&cargarFecha(&emp->FechadeContratacion,3,"\nIndique la fecha de contratacion: ")==0)
+        if(ok==1 && (getFloat(&emp->sueldo,"\n Indique El Salario: \n","Error, EL salario no puede ser menor a 1",1,99999999,3)!=1))
         {
             ok=0;
         }
         if(ok==1)
         {
-            emp->id=lista->size+1;
             ll_add(lista,emp);
         }
         else{
             free(emp);
         }
+        return ok;
     }
     return ok;
 }
@@ -86,7 +82,7 @@ int bajaEmpleado(LinkedList* lista)
                 do{
                     system("cls");
                     printf("Empleado ID: %d",empleado->id);
-                    printf("\n%5d %15s %15s %2c  %5.2f %2d/%2d/%d\n",empleado->id,empleado->nombre,empleado->apellido,empleado->sexo,empleado->salario,empleado->FechadeContratacion.dia,empleado->FechadeContratacion.mes,empleado->FechadeContratacion.anio);
+                    printf("%5d %15s %3d %6f\n",empleado->id,empleado->nombre,empleado->horasTrabajadas,empleado->sueldo);
                     getChar(&c,"\nEsta seguro que desea elimiar este empleado?(s/n)","",'A','z');
                     switch(c)
                     {
@@ -108,85 +104,31 @@ int bajaEmpleado(LinkedList* lista)
 
     return r;
 }
-int modificarEmpleado(LinkedList* lista)
+int imprimirEmpleados(LinkedList* lista)
 {
-    int r=0;
-    int i,index,opcion=33;
-    int len;
-    eEmpleado* empleado,*aux;
-    len=ll_len(lista);
-    index=pedir_entero("\nIndique el Numero de ID: \n");
-    for(i=0;i<len;i++)
+    int i;
+    eEmpleado* emp;
+    int len=ll_len(lista);
+    if(len>0)
     {
-        empleado=(eEmpleado*)ll_get(lista,i);
-        if(empleado->id==index)
+        system("cls");
+        printf("  ID       Nombre   Hs.Trab. Sueldo\n");
+        for(i=0;i<len;i++)
         {
-            aux=(eEmpleado*)malloc(sizeof(eEmpleado));
-            *aux=*empleado;
-            do{
-                printf("Empleado ID: %d",aux->id);
-                printf("\n%5d %15s %15s %2c  %5.2f %2d/%2d/%d\n",empleado->id,empleado->nombre,empleado->apellido,empleado->sexo,empleado->salario,empleado->FechadeContratacion.dia,empleado->FechadeContratacion.mes,empleado->FechadeContratacion.anio);
-                get_String_soloNum(&opcion,"\n---Modificar--- \n 1-Nombre.\n 2-Apellido \n 3-Sexo \n 4-Salario \n 5-Fecha de Contratacion\n 6-Salir y Guardar Cambios efectuados\n 0-Atras\n","\n Error Indique solo Numeros\n",1);
-                switch(opcion)
-                {
-                case 1:
-                    if(getString(aux->nombre,"\nIndique el Nombre Nuevo: \n","Error el Nombre debe tener al menos 3 caracteres\n",3,227,3))
-                    {
-                        printf("\nDato Modificado con exito\n");
-                        system("pause");
-
-                    }
-                    break;
-                case 2:
-                    if(getString(aux->apellido,"\nIndique el Apellido: ","\nError, el Apellido no debe tener mas de 30 caracteres \n",0,30,3))
-                    {
-                        printf("\nDato Modificado con exito\n");
-                        system("pause");
-
-
-                    }
-                    break;
-                case 3:
-                    if(cargarSexo(&aux->sexo,"\nIndique el sexo(m/f): ","\nError, indique m(masculino)o f(femenino)\n",3))
-                    {
-                        printf("\nDato Modificado con exito\n");
-                        system("pause");
-                    }
-                    break;
-                case 4:
-                    if(getFloat(&aux->salario,"\n Indique el salario: ","\nError,el salario debe ser mayo a 0\n",1,999999,3))
-                    {
-                        printf("\nDato Modificado con exito\n");
-                        system("pause");
-                    }
-                    break;
-                case 5:
-                     if(cargarFecha(&aux->FechadeContratacion,3,"\nIndique la fecha de contratacion: "))
-                     {
-                        printf("\nDato Modificado con exito\n");
-                        system("pause");
-                     }
-                    break;
-                case 6:
-                    *empleado=*aux;
-                    free(aux);
-                    opcion=0;
-                }
-
-
-            }while(opcion!=0);
-        r=1;
-        break;
+            emp=(eEmpleado*)ll_get(lista,i);
+            printf("%5d %15s %3d %6.2f\n",emp->id,emp->nombre,emp->horasTrabajadas,emp->sueldo);
         }
-     }
-    return r;
+
+    }
+
+    return len;
 }
 int guardarDatosArchivoTexto(char* path,LinkedList* lista)
 {
     FILE* pfile;
     int ok=0;
     int len,i;
-    char encabezado[]={"Id,Nombre,Apellido,Sexo,Salario,fecha de contratacion"};
+    char encabezado[]={"Id,Nombre,Apellido,HsTrabajadas,Sueldo"};
     eEmpleado* aux;
     pfile=fopen(path,"w");
     if(pfile!=NULL)
@@ -196,33 +138,59 @@ int guardarDatosArchivoTexto(char* path,LinkedList* lista)
         for(i=0;i<len;i++)
         {
             aux=(eEmpleado*)ll_get(lista,i);
-            fprintf(pfile,"%d,%s,%s,%c,%f,%d/%d/%d\n",aux->id,aux->nombre,aux->apellido,aux->sexo,aux->salario,aux->FechadeContratacion.dia,aux->FechadeContratacion.mes,aux->FechadeContratacion.anio);
+            fprintf(pfile,"%d,%s,%d,%0.2f\n",aux->id,aux->nombre,aux->horasTrabajadas,aux->sueldo);
         }
         ok=1;
     }
     fclose(pfile);
     return ok;
 }
-int guardarDatosArchivoBinario(char* path,LinkedList* lista)
+int CalcularSueldoXhorasTrabj(void* emp)
 {
-    FILE* pfile;
-    int ok=0;
-    int len,i;
-    char encabezado[]={"Id,Nombre,Apellido,Sexo,Salario,fecha de contratacion"};
+    int r;
     eEmpleado* aux;
-    pfile=fopen(path,"wb");
-    if(pfile!=NULL)
+    float sueldoParcialmenteCalculado;
+    float sueldoCalculado;
+    float auxhoras;
+    float HorasRestantes;
+    if(emp!=NULL)
     {
-        len=ll_len(lista);
-        fprintf(pfile,"%s\n",encabezado);
-        for(i=0;i<len;i++)
-        {
-            aux=(eEmpleado*)ll_get(lista,i);
-            fprintf(pfile,"%d,%s,%s,%c,%f,%d/%d/%d\n",aux->id,aux->nombre,aux->apellido,aux->sexo,aux->salario,aux->FechadeContratacion.dia,aux->FechadeContratacion.mes,aux->FechadeContratacion.anio);
-        }
-        ok=1;
-    }
-    fclose(pfile);
-    return ok;
-}
+        aux=(eEmpleado*)emp;
+        auxhoras=(float)aux->horasTrabajadas;
 
+        if(auxhoras<177)
+        {
+            sueldoCalculado=auxhoras*180;
+            aux->sueldo=sueldoCalculado;
+            r=1;
+        }
+        if(auxhoras>176 && auxhoras<209)
+        {
+            sueldoParcialmenteCalculado=176*180;
+            HorasRestantes=auxhoras-176;
+            sueldoCalculado=HorasRestantes * 270 + sueldoParcialmenteCalculado;
+            aux->sueldo=sueldoCalculado;
+            r=1;
+        }
+        if(auxhoras>208 && auxhoras<241)
+        {
+            sueldoCalculado=176*180;
+            HorasRestantes=auxhoras-176;
+            sueldoParcialmenteCalculado=sueldoParcialmenteCalculado+(32*270);
+            HorasRestantes=HorasRestantes-32;
+            sueldoCalculado=sueldoParcialmenteCalculado+(HorasRestantes*360);
+            aux->sueldo=sueldoCalculado;
+            r=1;
+        }
+    }
+    return r;
+}
+int calularsueldos(LinkedList* lista)
+{
+    int r=0;
+    if(lista!=NULL)
+    {
+        r=maps(lista,CalcularSueldoXhorasTrabj);
+    }
+    return r;
+}
