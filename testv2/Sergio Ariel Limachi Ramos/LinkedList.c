@@ -652,4 +652,27 @@ int maps(LinkedList* lista, int(*pfunc)(void*))
     }
     return returnAux;
 }
+LinkedList* ll_Filter(LinkedList* lista,int(*pfunc)(void*, void*),int x)
+{
+    LinkedList* nuevo;
+    int i;
+    void* actual;
+    if(lista!=NULL)
+    {
+        nuevo=ll_newLinkedList();
+        if(nuevo!=NULL)
+        {
+            for(i=0;i<ll_len(lista);i++)
+            {
+                actual=ll_get(lista,i);
+                if(pfunc(actual,x)==0)
+                {
+                    ll_add(nuevo,actual);
+                }
+            }
+        }
+
+    }
+    return nuevo;
+}
 

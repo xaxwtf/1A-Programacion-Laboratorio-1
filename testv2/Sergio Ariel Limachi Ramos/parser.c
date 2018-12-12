@@ -24,14 +24,14 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
     int r=0;
     r=fscanf(pFile,"%[^\n]",aux1);
     do{
-        r=fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]",aux1,aux2,aux3,aux4);
+        r=fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]",aux1,aux2,aux3,aux4,aux5);
         if(r==5)
         {
             nuevo=nuevoCte();
             nuevo->id=atoi(aux1);
             set_nombre(nuevo,aux2);
             set_sexo(nuevo,aux3[0]);
-            set_telefono(nuevo,aux3);
+            set_telefono(nuevo,aux4);
             set_importe(nuevo,atof(aux5));
             if(nuevo!=NULL)
             {

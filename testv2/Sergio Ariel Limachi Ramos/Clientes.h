@@ -13,4 +13,5 @@ int set_sexo(eCliente* x,char sexo);
 int set_telefono(eCliente* x, char* tel);
 int set_importe(eCliente* x,float importe);
 int cliente_get_Id(eCliente* x);
+float cliente_get_importe(eCliente* x);
 #endif // Clientes_H_INCLUDED

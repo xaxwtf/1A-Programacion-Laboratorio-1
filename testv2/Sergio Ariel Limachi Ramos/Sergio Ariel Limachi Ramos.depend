@@ -61,3 +61,65 @@
 1544010228 d:\sariel\sergio ariel limachi ramos\parser.h
 	"LinkedList.h"
 
+1544623847 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\abono.c
+	"Clientes.h"
+	"S_Ariel.h"
+	"Abono.h"
+	<stdio.h>
+	<stdlib.h>
+
+1544619568 d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\clientes.h
+
+1544615869 d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\s_ariel.h
+
+1544623582 d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\abono.h
+
+1544615869 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"Clientes.h"
+	<string.h>
+
+1544624305 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1544623358 d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\linkedlist.h
+
+1544624879 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"Abono.h"
+	"Clientes.h"
+	"LinkedList.h"
+
+1544620196 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"Clientes.h"
+	"LinkedList.h"
+	"S_Ariel.h"
+	<string.h>
+
+1544615869 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\s_ariel.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"S_Ariel.h"
+
+1544624792 source:d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\control.c
+	<stdio.h>
+	<stdlib.h>
+	"S_Ariel.h"
+	"Abono.h"
+	"Clientes.h"
+	"LinkedList.h"
+	"parser.h"
+
+1544615869 d:\sariel\1a-programacion-laboratorio-1\testv2\sergio ariel limachi ramos\parser.h
+	"LinkedList.h"
+

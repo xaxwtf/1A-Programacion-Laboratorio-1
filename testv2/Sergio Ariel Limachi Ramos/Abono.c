@@ -64,3 +64,37 @@ int abono_get_tipo(eAbono* x)
     }
     return r;
 }
+int ordenarXImporte(void* x,void* y)
+{
+    int r=0;
+    eAbono* dato1=(eAbono*)x;
+    eAbono* dato2=(eAbono*)y;
+    if(dato1->importeFinal > dato2->importeFinal)
+    {
+            r=1;
+    }
+    if(dato1->importeFinal < dato2->importeFinal)
+    {
+        r=-1;
+    }
+    return r;
+}
+int comparar(void* x, void* tipo)
+{
+    int r=NULL;
+    eAbono* lll=(eAbono*)x;
+    int y=(int)tipo;
+    if(lll->tipo==y)
+    {
+        r=0;
+    }
+    if(lll->tipo>y)
+    {
+        r=1;
+    }
+    if(lll->tipo<y)
+    {
+        r=-1;
+    }
+    return r;
+}
